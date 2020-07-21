@@ -1,6 +1,6 @@
 var arrayPc = [];
 var i = 0;
-var possibilita1 = 84;
+var possibilita = 84;
 // GENERO ARRAY DI 16 NUMERI
 
 while ( arrayPc.length < 16 ) {
@@ -17,7 +17,7 @@ var numeri = [];
 // CONTEGGIO O PUNTEGGIO UTENTE
 var counter= 0;
 // SE IL CONTROLLO è FALSO E NON ABBIAMO SUPERATO GLI 84 TENTATIVI IL CICLO CONTINUERà
-while (numeri.length < possibilita1 && (controllo(arrayPc,utente)) != true) {
+while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
   var utente = parseInt(prompt("inserisci un numero da 1 a 100"));
   check(utente);
   // ORA IMPOSTO I VARI if
@@ -25,7 +25,7 @@ while (numeri.length < possibilita1 && (controllo(arrayPc,utente)) != true) {
   if (controllo(arrayPc,utente) == true || numeri.includes(utente)) {
     alert ("HAI PERSO punteggio ottenuto: " + counter )
     // SE IL NUMERO è BUONO SI PROSEGUIRà
-  }else if (numeri.includes(utente) == false && numeri.length < 83 ) {
+  }else if (numeri.includes(utente) == false && numeri.length < possibilita -1 ) {
     numeri.push(utente);
     counter += +1;
     // SE ARRIVA ALLA FINE HA VINTO
