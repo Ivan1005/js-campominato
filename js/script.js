@@ -1,7 +1,15 @@
 var arrayPc = [];
 var i = 0;
-var possibilita = 84;
+;
 var maxR = 100;
+
+// IMPOSTO DIFFICOLTà
+var diff = prompt("inserisci la difficoltà : facile , medio , difficile");
+if (diff == "medio") {
+  maxR = 80;
+}else if (diff == "difficile") {
+  maxR = 50;
+}
 // GENERO ARRAY DI 16 NUMERI
 
 while ( arrayPc.length < 16 ) {
@@ -11,7 +19,7 @@ while ( arrayPc.length < 16 ) {
     }
 }
 
-   // IMPOSTO LE difficoltà
+var possibilita = maxR - 16 ;
 
 
 
@@ -22,8 +30,17 @@ var numeri = [];
 var counter= 0;
 // SE IL CONTROLLO è FALSO E NON ABBIAMO SUPERATO GLI 84 TENTATIVI IL CICLO CONTINUERà
 while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
-   var utente = parseInt(prompt("inserisci un numero da 1 a 100"));
-  check(utente);
+
+  if (maxR == 80) {
+    var utente = parseInt(prompt("inserisci un numero da 1 a 80"));
+    check2(utente);
+  }else if (maxR == 50) {
+    var utente = parseInt(prompt("inserisci un numero da 1 a 50"));
+    check3(utente);
+  }else {
+    var utente = parseInt(prompt("inserisci un numero da 1 a 100"));
+    check(utente);
+  }
   // ORA IMPOSTO I VARI if
   // SE IL NUMERO INSERITO è PRESENTE NELL ARRAY O LO HA GIà USATO ACCADRà QUESTO
   if (controllo(arrayPc,utente) == true || numeri.includes(utente)) {
@@ -44,7 +61,16 @@ function check (num) {
     alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
   }
 }
-
+function check2 (num) {
+  if (  num >80 || num <= 0) {
+    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+  }
+}
+function check3 (num) {
+  if (  num >50 || num <= 0) {
+    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+  }
+}
 
 //funzione per numero random
 function getRandom (min, max) {
