@@ -4,12 +4,25 @@ var i = 0;
 var maxR = 100;
 
 // IMPOSTO DIFFICOLTà
-var diff = prompt("inserisci la difficoltà : facile , medio , difficile");
+do {
+  var diff = prompt("inserisci la difficoltà : facile , medio , difficile");
+} while (diff != "medio" && diff != "facile" && diff != "difficile");
+
 if (diff == "medio") {
   maxR = 80;
 }else if (diff == "difficile") {
   maxR = 50;
 }
+
+// switch (diff) {
+//   case "medio" :
+//     maxR=80;
+//     break;
+//   case "difficile":
+//     maxR = 50;
+//     break;
+// }
+
 // GENERO ARRAY DI 16 NUMERI
 
 while ( arrayPc.length < 16 ) {
@@ -28,17 +41,10 @@ console.log(arrayPc);
 var numeri = [];
 // SE IL CONTROLLO è FALSO E NON ABBIAMO SUPERATO GLI 84 TENTATIVI IL CICLO CONTINUERà
 while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
-
-  if (maxR == 80) {
-    var utente = parseInt(prompt("inserisci un numero da 1 a 80"));
-    check2(utente);
-  }else if (maxR == 50) {
-    var utente = parseInt(prompt("inserisci un numero da 1 a 50"));
-    check3(utente);
-  }else {
-    var utente = parseInt(prompt("inserisci un numero da 1 a 100"));
-    check(utente);
-  }
+    var utente = parseInt(prompt("inserisci un numero da 1 a "+ maxR));
+    if (  utente >maxR || utente <= 0) {
+        alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A "+ maxR);
+      }
   // ORA IMPOSTO I VARI if
   // SE IL NUMERO INSERITO è PRESENTE NELL ARRAY O LO HA GIà USATO ACCADRà QUESTO
   if (controllo(arrayPc,utente) == true || numeri.includes(utente)) {
@@ -52,22 +58,22 @@ while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
   }
 }
 
-
-function check (num) {
-  if (  num >100 || num <= 0) {
-    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
-  }
-}
-function check2 (num) {
-  if (  num >80 || num <= 0) {
-    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
-  }
-}
-function check3 (num) {
-  if (  num >50 || num <= 0) {
-    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
-  }
-}
+// COMPLICATO INUTILMENTE
+// function check (num) {
+//   if (  num >100 || num <= 0) {
+//     alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+//   }
+// }
+// function check2 (num) {
+//   if (  num >80 || num <= 0) {
+//     alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+//   }
+// }
+// function check3 (num) {
+//   if (  num >50 || num <= 0) {
+//     alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+//   }
+// }
 
 //funzione per numero random
 function getRandom (min, max) {
