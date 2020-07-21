@@ -44,7 +44,7 @@ while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
   if (controllo(arrayPc,utente) == true || numeri.includes(utente)) {
     alert ("HAI PERSO punteggio ottenuto: " + numeri.length )
     // SE IL NUMERO è BUONO SI PROSEGUIRà
-  }else if (numeri.includes(utente) == false && numeri.length < possibilita -1 ) {
+  }else if (numeri.includes(utente) == false && numeri.length < possibilita  ) {
     numeri.push(utente);
     // SE ARRIVA ALLA FINE HA VINTO
   }else {
