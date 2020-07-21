@@ -26,8 +26,6 @@ var possibilita = maxR - 16 ;
 console.log(arrayPc);
 // NUMERI DELL'UTENTE CHE NON SI RIPETERANNO
 var numeri = [];
-// CONTEGGIO O PUNTEGGIO UTENTE
-var counter= 0;
 // SE IL CONTROLLO è FALSO E NON ABBIAMO SUPERATO GLI 84 TENTATIVI IL CICLO CONTINUERà
 while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
 
@@ -44,11 +42,10 @@ while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
   // ORA IMPOSTO I VARI if
   // SE IL NUMERO INSERITO è PRESENTE NELL ARRAY O LO HA GIà USATO ACCADRà QUESTO
   if (controllo(arrayPc,utente) == true || numeri.includes(utente)) {
-    alert ("HAI PERSO punteggio ottenuto: " + counter )
+    alert ("HAI PERSO punteggio ottenuto: " + numeri.length )
     // SE IL NUMERO è BUONO SI PROSEGUIRà
   }else if (numeri.includes(utente) == false && numeri.length < possibilita -1 ) {
     numeri.push(utente);
-    counter += +1;
     // SE ARRIVA ALLA FINE HA VINTO
   }else {
     alert("hai vinto");
