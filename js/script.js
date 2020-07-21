@@ -40,24 +40,26 @@ console.log(arrayPc);
 // NUMERI DELL'UTENTE CHE NON SI RIPETERANNO
 var numeri = [];
 // SE IL CONTROLLO è FALSO E NON ABBIAMO SUPERATO GLI 84 TENTATIVI IL CICLO CONTINUERà
-while (numeri.length < possibilita && (controllo(arrayPc,utente)) != true) {
+while (numeri.length < possibilita && controllo(arrayPc,utente) != true) {
     var utente = parseInt(prompt("inserisci un numero da 1 a "+ maxR));
     if (  utente >maxR || utente <= 0) {
         alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A "+ maxR);
       }
   // ORA IMPOSTO I VARI if
   // SE IL NUMERO INSERITO è PRESENTE NELL ARRAY O LO HA GIà USATO ACCADRà QUESTO
-  if (controllo(arrayPc,utente) == true || numeri.includes(utente)) {
+   else if (controllo(arrayPc,utente) == true ) {
     alert ("HAI PERSO punteggio ottenuto: " + numeri.length )
     // SE IL NUMERO è BUONO SI PROSEGUIRà
-  }else if (numeri.includes(utente) == false && numeri.length < possibilita  ) {
+  }else if (numeri.includes(utente) == false ) {
     numeri.push(utente);
-    // SE ARRIVA ALLA FINE HA VINTO
-  }else {
-    alert("hai vinto");
+     if ( numeri.length == possibilita){
+      alert("hai vinto");
+    }  // SE ARRIVA ALLA FINE HA VINTO
+  }else if ( numeri.includes(utente)){
+    alert("attenzione il numero  è già inserito");
   }
 }
-
+console.log(numeri);
 // COMPLICATO INUTILMENTE
 // function check (num) {
 //   if (  num >100 || num <= 0) {
