@@ -2,11 +2,12 @@ var arrayPc = [];
 var i = 0;
 // GENERO ARRAY DI 16 NUMERI
 
-for (var i = 0 ; arrayPc.length < 16 ; i++) {
+while ( arrayPc.length < 16 ;) {
   var n = getRandom (1, 100);
     if ( arrayPc.includes(n) == false){
       arrayPc.push(n);
     }
+    i++;
 }
 
 
