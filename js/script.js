@@ -60,12 +60,12 @@ function check (num) {
 }
 function check2 (num) {
   if (  num >80 || num <= 0) {
-    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 80");
   }
 }
 function check3 (num) {
   if (  num >50 || num <= 0) {
-    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 100");
+    alert(" ATTENZIONE INSERISCI UN NUMERO DA 1 A 50");
   }
 }
 
